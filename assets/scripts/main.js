@@ -90,7 +90,7 @@ async function getRecipes() {
   /**************************/
   // A4. TODO - Loop through each recipe in the RECIPE_URLS array constant
   //            declared above
-  for (let url of RECIPE_URLs) 
+  for (let url of RECIPE_URLS) 
   {
     // A5. TODO - Since we are going to be dealing with asynchronous code, create
     //            a try / catch block. A6-A9 will be in the try portion, A10-A11
@@ -114,11 +114,17 @@ async function getRecipes() {
   //            we have provided. Then, pass the recipes array to the Promise's
   //            resolve() method.
             
-
+            saveRecipesToStorage(recipes);
+            resolve(recipes);
           }
 
 
         } catch (error) {
+          // A10. TODO - Log any errors from catch using console.error
+          console.error('Error fetching recipes:', error);
+          // A11. TODO - Pass any errors to the Promise's reject() function
+          reject('Error fetching recipes:', error);
+
 
         } 
 
@@ -127,8 +133,7 @@ async function getRecipes() {
   }
   });
 
-  // A10. TODO - Log any errors from catch using console.error
-  // A11. TODO - Pass any errors to the Promise's reject() function
+  
 }
 
 /**
