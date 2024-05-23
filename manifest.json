@@ -1,15 +1,20 @@
 {
     "name": "soccerplayer6/Lab8-Starter",
     "short_name": "Ibraheem",
-    "description": "",
-    "start_url": "",
-    "display": "",
-    "background_color": "",
+    "description": "lab 8",
+    "start_url": "https://soccerplayer6.github.io/Lab8-Starter/",
+    "display": "standalone",
+    "background_color": "red",
     "theme_color": "",
     "icons": [
       {
         "src": "/assets/images/icons/icon-192x192.png",
         "sizes": "192x192",
+        "type": "image/png"
+      }
+      {
+        "src": "/assets/images/icons/icon-256x256.png",
+        "sizes": "256x256",
         "type": "image/png"
       }
     ]
