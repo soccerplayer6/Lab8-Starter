@@ -5,7 +5,7 @@
     "start_url": "https://soccerplayer6.github.io/Lab8-Starter/",
     "display": "standalone",
     "background_color": "red",
-    "theme_color": "",
+    "theme_color": "blue",
     "icons": [
       {
         "src": "/assets/images/icons/icon-192x192.png",
