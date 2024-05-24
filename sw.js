@@ -46,10 +46,10 @@ self.addEventListener('fetch', function (event) {
     event.waitUntil(caches.open(CACHE_NAME));
   });
   // B8. TODO - If the request is in the cache, return with the cached version.
-  event.respondWith(
+  //event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        return cachedResponse; // If the request is in the cache, return it
+        return cachedResponse; 
       }
 
       //            Otherwise fetch the resource, add it to the cache, and return
@@ -62,6 +62,6 @@ self.addEventListener('fetch', function (event) {
         });
       });
     })
-  );
+ // );
 
 });
