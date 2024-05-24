@@ -42,6 +42,7 @@ self.addEventListener('fetch', function (event) {
   /*******************************/
   // B7. TODO - Respond to the event by opening the cache using the name we gave
   //            above (CACHE_NAME)
+  /*
   self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(CACHE_NAME));
   });
@@ -63,5 +64,19 @@ self.addEventListener('fetch', function (event) {
       });
     })
  // );
+ */
+ event.respondWith(
+  caches.match(event.request).then((cachedResponse) => {
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    return fetch(event.request).then((networkResponse) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      });
+    });
+  })
+);
 
 });
