@@ -51,7 +51,7 @@ function initializeServiceWorker() {
         
         try { 
           const registration = await navigator.serviceWorker.register("/sw.js", {
-            scope: "/Lab8-Starter/",
+            scope: "/",
           });
           if (registration.installing) {
             console.log("Service worker installing");
